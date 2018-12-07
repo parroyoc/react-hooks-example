@@ -1,0 +1,27 @@
+.basket-item {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 1rem 2rem;
+  font-size: 30px;
+  margin-bottom: 0.5rem;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.basket-item__name {
+  flex: 2;
+}
+
+.basket-item__price {
+  text-align: right;
+  margin-right: 2rem;
+  flex: 1;
+}
+
+.basket-item__remove {
+  color: red;
+  font-size: 20px;
+  padding: 0 0.5rem 0.25rem 0.5rem;
+}
