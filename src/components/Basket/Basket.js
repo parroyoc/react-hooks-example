@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import AvailableItems from "../AvailableItems/AvailableItems";
 import BasketItem from "../BasketItem/BasketItem";
-import AddBasketItemForm from "../AddBasketItemForm/AddBasketItemForm";
 import API from "../../utils/api";
 import './Basket.css';
 
@@ -43,7 +42,6 @@ export default function Basket() {
           removeBasketItem={removeBasketItem}
         />
       ))}
-      {/*<AddBasketItemForm addBasketItem={addBasketItem} />*/}
       <AvailableItems availableItems={availableItems} addItemToBasket={addItemToBasket} />
     </div>
   );

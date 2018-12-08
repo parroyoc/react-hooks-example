@@ -1,0 +1,27 @@
+.recipient-form {
+  border-top: 1px solid #bbbbbb;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #e8e8e8;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipient-form__input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  max-width: 20rem;
+  font-size: 15px;
+}
+
+.recipient-form__error {
+  color: red;
+}
+
+.recipient-form__submit {
+  color: green;
+  font-size: 20px;
+  padding: 0 0.5rem 0.25rem 0.5rem;
+}
