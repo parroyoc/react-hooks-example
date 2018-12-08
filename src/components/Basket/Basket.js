@@ -1,29 +1,29 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import AvailableItems from "../AvailableItems/AvailableItems";
 import BasketItem from "../BasketItem/BasketItem";
 import AddBasketItemForm from "../AddBasketItemForm/AddBasketItemForm";
+import API from "../../utils/api";
 import './Basket.css';
 
 export default function Basket() {
   // TODO add useReducer. See https://daveceddia.com/usereducer-hook-examples/
   // TODO add a fetch on componentDidMount
+  // TODO available items not inside basket
 
+  const [availableItems, setAvailableItems] = useState([]);
   const [basketItems, setBasketItems] = useState([
     {
       name: "Meal deal",
       price: 3.99
-    },
-    {
-      name: "Coffee",
-      price: 2.50
-    },
-    {
-      name: "Arduino starter kit",
-      price: 82.10
     }
   ]);
+  useEffect(() => {
+    // TODO how to fetch just once?
+    API.getShopAvailableItems(setAvailableItems);
+  });
 
-  const addBasketItem = text => {
-    const newBasketItems = [...basketItems, { text }];
+  const addItemToBasket = item => {
+    const newBasketItems = [...basketItems, item];
     setBasketItems(newBasketItems);
   };
 
@@ -43,7 +43,8 @@ export default function Basket() {
           removeBasketItem={removeBasketItem}
         />
       ))}
-      <AddBasketItemForm addBasketItem={addBasketItem} />
+      {/*<AddBasketItemForm addBasketItem={addBasketItem} />*/}
+      <AvailableItems availableItems={availableItems} addItemToBasket={addItemToBasket} />
     </div>
   );
 }

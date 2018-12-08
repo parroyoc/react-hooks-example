@@ -1,0 +1,25 @@
+.available-item {
+  background: #bbbbbb;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  max-width: 30rem;
+  line-height: 2rem;
+  display: flex;
+}
+
+.available-item__name {
+  flex: 2;
+}
+
+.available-item__price {
+  text-align: right;
+  margin-right: 2rem;
+  flex: 1;
+}
+
+.available-item__pick {
+  color: green;
+  font-size: 20px;
+  padding: 0 0.5rem 0.25rem 0.5rem;
+}
