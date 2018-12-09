@@ -1,3 +1,4 @@
+import {useReducer} from "react";
 
 const ADD_ITEM = 'ADD_ITEM';
 const REMOVE_ITEM = 'REMOVE_ITEM';
@@ -16,7 +17,23 @@ const basketReducer = (state, action) => {
   }
 };
 
-export default basketReducer;
+function basketReducerFactory(){
+  const [basketItems, dispatchBasket] = useReducer(basketReducer, []);
+
+  // NOTE: THESE ACTIONS NEED DISPATCH, SO THE ACTION CREATORS MUST BE DECLARED HERE
+  const addItem = (item) => dispatchBasket({ type: ADD_ITEM, item });
+  const removeItem = (index) => dispatchBasket({ type: REMOVE_ITEM, index });
+
+  return {
+    basketItems,
+    basketActions: {
+      addItem,
+      removeItem
+    }
+  }
+}
+
+export default basketReducerFactory;
 export {
   ADD_ITEM,
   REMOVE_ITEM
