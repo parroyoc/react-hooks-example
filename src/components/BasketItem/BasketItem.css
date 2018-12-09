@@ -1,8 +1,7 @@
 .basket-item {
-  background: #fff;
+  background: #aca;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  padding: 1rem 2rem;
-  font-size: 30px;
+  padding: 1rem;
   margin-bottom: 0.5rem;
   border-radius: 3px;
   display: flex;

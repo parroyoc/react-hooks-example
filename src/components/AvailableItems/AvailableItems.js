@@ -13,6 +13,7 @@ export default function AvailableItems({addItemToBasket}) {
 
   return (
     <div className="available-items">
+      <h2>Available items:</h2>
       {availableItems.map((availableItem, index) => (
         <AvailableItem
           key={index}

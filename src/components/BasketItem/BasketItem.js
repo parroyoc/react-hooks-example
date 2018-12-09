@@ -8,7 +8,7 @@ export default function BasketItem({ basketItem, index, removeBasketItem }) {
       <div className="basket-item__name">{name}</div>
       <div className="basket-item__price">{price}</div>
       <div>
-        <button className="basket-item__remove" onClick={() => removeBasketItem(index)}>x</button>
+        <button className="basket-item__remove" onClick={() => removeBasketItem(index)}>drop</button>
       </div>
     </div>
   );
