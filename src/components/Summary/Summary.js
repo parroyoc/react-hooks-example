@@ -1,7 +1,9 @@
-import React, { useMemo } from "react";
+import React, { useContext, useMemo } from "react";
+import ContentContext from '../../utils/ContentContext';
 import './Summary.css';
 
 export default function Summary({recipient, basketItems}) {
+  const messages = useContext(ContentContext);
   const totalPrice = useMemo(
     () => {
       const total = basketItems.reduce((sum, item) => sum + item.price, 0);
@@ -13,9 +15,9 @@ export default function Summary({recipient, basketItems}) {
 
   return (
     <div className="summary">
-      <h2>Summary:</h2>
+      <h2>{messages.summaryTitle}</h2>
 
-      <h3>Recipient:</h3>
+      <h3>{messages.summaryRecipient}</h3>
       {JSON.stringify(recipient)}
 
       <h3>Basket items:</h3>
