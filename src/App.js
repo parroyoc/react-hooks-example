@@ -1,11 +1,11 @@
 import React, {useState} from "react";
+import AvailableItems from "./components/AvailableItems/AvailableItems";
 import Basket from "./components/Basket/Basket";
 import RecipientForm from "./components/RecipientForm/RecipientForm";
 import Summary from "./components/Summary/Summary";
 import basketReducerFactory from './reducers/basket';
 
 import "./App.css";
-import AvailableItems from "./components/AvailableItems/AvailableItems";
 
 function App() {
   const [recipient, setRecipient] = useState({});
